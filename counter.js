@@ -22,6 +22,7 @@ function go(message) {
 function countPixels(data) {   
     const colorCounts = {};
     for(let index = 0; index < data.length; index += 4) {
+        console.log(index);
         const rgba = `rgba(${data[index]}, ${data[index + 1]}, ${data[index + 2]}, ${(data[index + 3] / 255)})`;
 
         if (rgba in colorCounts) {
@@ -29,6 +30,7 @@ function countPixels(data) {
         } else {
             colorCounts[rgba] = 1;
         }
+        
     }    
     return colorCounts;
 }
